@@ -9,7 +9,9 @@
         Silakan tunggu update terbaru dari kami via email yang sudah Anda
         daftarkan sebelumnya.
       </p>
-      <a href="/" class="primary-btn pd-cart mt-3">Back to Home</a>
+      <router-link to="/">
+        <a href="/" class="primary-btn pd-cart mt-3">Back to Home</a>
+      </router-link>
     </div>
   </div>
 </template>

@@ -19,7 +19,7 @@
                   <tbody>
                     <tr>
                       <td class="cart-pic first-row">
-                        <img src="img/cart-page/product-1.jpg" />
+                        <img src="img/cart-page/mickey-1.jpg" />
                       </td>
                       <td class="cart-title first-row text-center">
                         <h5>Pure Pineapple</h5>
@@ -46,8 +46,8 @@
               </div>
             </div>
             <div class="col-lg-8">
-              <h4 class="mb-4">Informasi Pembeli:</h4>
-              <div class="user-checkout">
+              <h4 class="mb-4 text-left">Informasi Pembeli:</h4>
+              <div class="user-checkout text-left">
                 <form>
                   <div class="form-group">
                     <label for="namaLengkap">Nama lengkap</label>

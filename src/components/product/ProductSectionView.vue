@@ -7,29 +7,54 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="product-pic-zoom">
-                <img class="product-big-img" src="img/mickey1.jpg" alt="" />
+                <img class="product-big-img" :src="product_img_main" alt="" />
               </div>
               <div class="product-thumbs">
-                <div class="product-thumbs-track ps-slider owl-carousel">
-                  <div class="pt active" data-imgbigurl="img/mickey1.jpg">
-                    <img src="img/mickey1.jpg" alt="" />
-                  </div>
-
-                  <div class="pt" data-imgbigurl="img/mickey2.jpg">
-                    <img src="img/mickey2.jpg" alt="" />
-                  </div>
-
-                  <div class="pt" data-imgbigurl="img/mickey3.jpg">
-                    <img src="img/mickey3.jpg" alt="" />
-                  </div>
-
-                  <div class="pt" data-imgbigurl="img/mickey4.jpg">
-                    <img src="img/mickey4.jpg" alt="" />
-                  </div>
-                </div>
+                <Carousel
+                  :autoplay="false"
+                  :wrap-around="true"
+                  :items-to-show="3"
+                >
+                  <Slide v-for="slide in 1" :key="slide">
+                    <div
+                      class="pt"
+                      @click="changeImage(thumbs[0])"
+                      :class="thumbs[0] == product_img_main ? 'active' : ''"
+                    >
+                      <img src="../../../public/img/mickey1.jpg" alt="" />
+                    </div>
+                  </Slide>
+                  <Slide v-for="slide in 1" :key="slide">
+                    <div
+                      class="pt"
+                      @click="changeImage(thumbs[1])"
+                      :class="thumbs[1] == product_img_main ? 'active' : ''"
+                    >
+                      <img src="../../../public/img/mickey2.jpg" alt="" />
+                    </div>
+                  </Slide>
+                  <Slide v-for="slide in 1" :key="slide">
+                    <div
+                      class="pt"
+                      @click="changeImage(thumbs[2])"
+                      :class="thumbs[2] == product_img_main ? 'active' : ''"
+                    >
+                      <img src="../../../public/img/mickey3.jpg" alt="" />
+                    </div>
+                  </Slide>
+                  <Slide v-for="slide in 1" :key="slide">
+                    <div
+                      class="pt"
+                      @click="changeImage(thumbs[3])"
+                      :class="thumbs[3] == product_img_main ? 'active' : ''"
+                    >
+                      <img src="../../../public/img/mickey4.jpg" alt="" />
+                    </div>
+                  </Slide>
+                </Carousel>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-left">
               <div class="product-details">
                 <div class="pd-title">
                   <span>oranges</span>
@@ -61,7 +86,11 @@
                   <h4>$495.00</h4>
                 </div>
                 <div class="quantity">
-                  <a href="#/cart" class="primary-btn pd-cart">Add To Cart</a>
+                  <router-link to="/cart"
+                    ><a href="#/cart" class="primary-btn pd-cart"
+                      >Add To Cart</a
+                    ></router-link
+                  >
                 </div>
               </div>
             </div>
@@ -74,7 +103,30 @@
 </template>
 
 <script>
+import { Carousel, Slide } from "vue3-carousel";
+
+import "vue3-carousel/dist/carousel.css";
 export default {
   name: "ProductSectionView",
+  components: {
+    Carousel,
+    Slide,
+  },
+  data() {
+    return {
+      product_img_main: "img/mickey1.jpg",
+      thumbs: [
+        "img/mickey1.jpg",
+        "img/mickey2.jpg",
+        "img/mickey3.jpg",
+        "img/mickey4.jpg",
+      ],
+    };
+  },
+  methods: {
+    changeImage(urlImage) {
+      this.product_img_main = urlImage;
+    },
+  },
 };
 </script>

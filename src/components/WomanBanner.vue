@@ -9,7 +9,9 @@
                 <img src="img/mickey1.jpg" alt="" />
                 <ul>
                   <li class="w-icon active">
-                    <a href="#"><i class="icon_bag_alt"></i></a>
+                    <router-link to="/product">
+                      <i class="icon_bag_alt"></i>
+                    </router-link>
                   </li>
                   <li class="quick-view">
                     <router-link to="/product">+ Quick View</router-link>
@@ -18,9 +20,11 @@
               </div>
               <div class="pi-text">
                 <div class="catagory-name">Coat</div>
-                <a href="#">
-                  <h5>Mickey Baggy</h5>
-                </a>
+                <router-link to="/product">
+                  <a href="">
+                    <h5>Mickey Baggy</h5>
+                  </a>
+                </router-link>
                 <div class="product-price">
                   $14.00
                   <span>$35.00</span>

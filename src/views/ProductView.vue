@@ -1,9 +1,11 @@
 <template>
-  <HeaderShop></HeaderShop>
-  <BreacrumpView />
-  <ProductSectionViewVue></ProductSectionViewVue>
-  <RelatedProductView />
-  <FooterShop></FooterShop>
+  <div class="product">
+    <HeaderShop></HeaderShop>
+    <BreacrumpView />
+    <ProductSectionViewVue></ProductSectionViewVue>
+    <RelatedProductView />
+    <FooterShop></FooterShop>
+  </div>
 </template>
 
 <script>
